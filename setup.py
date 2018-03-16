@@ -1,11 +1,5 @@
 #!/usr/bin/env python
-from setuptools import setup, Extension
-
-video = Extension(
-	name='ardrone.video',
-	libraries=['avcodec', 'avformat', 'avutil', 'swscale'],
-	sources=['ardrone/video.c'],
-)
+from setuptools import setup
 
 setup(
 	name='ardrone',
@@ -16,5 +10,4 @@ setup(
 	author='Foster McLane',
 	author_email='fkmclane@gmail.com',
 	packages=['ardrone'],
-	ext_modules=[video],
 )

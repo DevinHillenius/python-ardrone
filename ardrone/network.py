@@ -12,7 +12,6 @@ import PIL.Image
 
 import ardrone.constant
 import ardrone.navdata
-import ardrone.video
 
 
 class ARDroneNetworkProcess(multiprocessing.Process):
@@ -60,9 +59,9 @@ class ARDroneNetworkProcess(multiprocessing.Process):
 
                     try:
                         # decode the frame
-                        image = ardrone.video.decode(data)
-                        self.video_pipe.send(image)
-                    except ardrone.video.DecodeError:
+                        # image = ardrone.video.decode(data)
+                        self.video_pipe.send("")
+                    except Exception:
                         pass
                 elif i == nav_socket:
                     while 1:
